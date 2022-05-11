@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
+import MusicList from "../Components/MusicList";
 
 const MusicContainer = () => {
-  [songs, setSongs] = useState(null);
+  const [songs, setSongs] = useState([]);
 
   useEffect(() => {
     getSongs();
@@ -10,11 +11,13 @@ const MusicContainer = () => {
   const getSongs = () => {
     fetch('https:/itunes.apple.com/gb/rss/topsongs/limit=20/json')
     .then(response => response.json())
-    .then(songs => setSongs(songs));
+    .then(songs => setSongs(songs.feed.entry));
   }
 
   return (
-    pass
+    <ul>
+      <MusicList songs={songs}></MusicList>
+    </ul>
   )
 }
 

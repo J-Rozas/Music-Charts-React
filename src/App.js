@@ -4,7 +4,12 @@ import MusicContainer from './Containers/MusicContainer';
 
 function App() {
   return (
-   "test"
+   <>
+     <h1>
+       Top 20 songs
+     </h1>
+     <MusicContainer></MusicContainer>
+   </>
   );
 }
 
