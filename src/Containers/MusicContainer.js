@@ -10,7 +10,7 @@ const MusicContainer = () => {
   ]
 
   const [songs, setSongs] = useState([]);
-  const [musicType, setMusicType] = useState(allMusic[1].url);
+  const [musicType, setMusicType] = useState(allMusic[0].url);
 
 
   useEffect(() => {
